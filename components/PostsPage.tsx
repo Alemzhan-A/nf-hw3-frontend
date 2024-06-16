@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import PostCard from '../components/PostCard';
-import PostForm from '../components/PostForm';
 import { usePosts } from '@/app/context/PostsContext';
 
 const PostsPage = () => {
@@ -13,7 +12,6 @@ const PostsPage = () => {
       <div className="mb-4 flex justify-end">
         <button onClick={() => setIsAdding(true)} className="p-2 bg-emerald-500 text-white rounded">Add Post</button>
       </div>
-      {isAdding && <PostForm onClose={() => setIsAdding(false)} />}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {posts.map(post => (
           <PostCard key={post.id} post={post} />

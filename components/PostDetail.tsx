@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Post } from '../interfaces/post';
 import { usePosts } from '@/app/context/PostsContext';
-import PostForm from './PostForm';
 
 interface PostDetailProps {
   post: Post;
@@ -15,9 +14,6 @@ const PostDetail: React.FC<PostDetailProps> = ({ post }) => {
     deletePost(post.id);
   };
 
-  if (isEditing) {
-    return <PostForm post={post} onClose={() => setIsEditing(false)} />;
-  }
 
   return (
     <div className="bg-white shadow-md rounded p-4">
